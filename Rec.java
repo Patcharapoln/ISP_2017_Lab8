@@ -20,13 +20,17 @@ public class Rec {
 	}
 
 
-	 /** = a copy of s with to_remove_char removed.
-	 Example: removeChar("abeabe", 'e') = "abab". */
-	 public static String removeChar(String s, char to_remove_char) {
-	
-	 // fill me in
-	
-	 }
+	/** = a copy of s with to_remove_char removed.
+		Example: removeChar("abeabe", 'e') = "abab". */
+	public static String removeChar(String s , char to_remove_char) {
+		String newString = "";
+		newString = s.substring( 0, s.indexOf(to_remove_char) ) + "" + 
+		s.substring( s.indexOf( to_remove_char ) +1 );
+		if( newString.indexOf( to_remove_char ) != -1 ) {
+			newString = removeChar( newString , to_remove_char );
+		}
+		return newString;
+	}
 	
 
 	/** = a copy of s with characters in reverse order.
