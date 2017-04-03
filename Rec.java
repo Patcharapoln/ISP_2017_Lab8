@@ -7,7 +7,7 @@ public class Rec {
 	 * 4. Precondition: n >= 0.
 	 */
 	public static int numDigits(int n) {
-		
+
 	}
 
 	/**
@@ -16,8 +16,15 @@ public class Rec {
 	 * Precondition: n >= 0.
 	 */
 	public static int sumDigits(int n) {
-		// fill me in
-	}
+		int sum = 0;
+
+		if (n == 0) {
+			return sum;
+		} else {
+			sum = n % 10 + sumDigits(n / 10);
+			return sum;
+
+		}	}
 
 
 	/** = a copy of s with to_remove_char removed.
@@ -25,23 +32,23 @@ public class Rec {
 	public static String removeChar(String s , char to_remove_char) {
 		String newString = "";
 		newString = s.substring( 0, s.indexOf(to_remove_char) ) + "" + 
-		s.substring( s.indexOf( to_remove_char ) +1 );
+				s.substring( s.indexOf( to_remove_char ) +1 );
 		if( newString.indexOf( to_remove_char ) != -1 ) {
 			newString = removeChar( newString , to_remove_char );
 		}
 		return newString;
 	}
-	
+
 
 	/** = a copy of s with characters in reverse order.
 		Example: reverse("abcdefg") = "gfedcba". */
 	public static String reverse(String s) {
 
-		    if ((s == null) || (s.length() <= 1)) {
-		        return s;
-		    }
-		    return reverse(s.substring(1)) + s.charAt(0);
-		
+		if ((s == null) || (s.length() <= 1)) {
+			return s;
+		}
+		return reverse(s.substring(1)) + s.charAt(0);
+
 	}
 
 	public static void main(String[] args) {
@@ -55,12 +62,12 @@ public class Rec {
 		System.out.println(sumDigits(1));
 		System.out.println(sumDigits(0));
 		System.out.println("-----------------");
-		 System.out.println(removeChar("eawabbcceccddeeaaeeeee", 'e'));
-		 System.out.println(removeChar("acacacacac", 'a'));
-		 System.out.println("-----------------");
-		 System.out.println(reverse("aaabbbaccabda"));
-		 System.out.println(reverse("abbcccdeaaa"));
-		 System.out.println(reverse("AMANAPLANACANALPANAMA"));
+		System.out.println(removeChar("eawabbcceccddeeaaeeeee", 'e'));
+		System.out.println(removeChar("acacacacac", 'a'));
+		System.out.println("-----------------");
+		System.out.println(reverse("aaabbbaccabda"));
+		System.out.println(reverse("abbcccdeaaa"));
+		System.out.println(reverse("AMANAPLANACANALPANAMA"));
 	}
 
 }
