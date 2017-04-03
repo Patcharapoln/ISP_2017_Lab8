@@ -14,24 +14,19 @@ public class Rec {
 		}
 	}
 
-	/**
-	 * = sum of the digits in the decimal representation of n. e.g. sumDigits(0)
-	 * = 0, sumDigits(3) = 3, sumDigits(34) = 7, sumDigits(345) = 12.
-	 * Precondition: n >= 0.
-	 */
-	public static int sumDigits(int n) {
-		// fill me in
+	
+	/** = a copy of s with to_remove_char removed.
+		Example: removeChar("abeabe", 'e') = "abab". */
+	public static String removeChar(String s , char to_remove_char) {
+		String newString = "";
+		newString = s.substring( 0, s.indexOf(to_remove_char) ) + "" + 
+		s.substring( s.indexOf( to_remove_char ) +1 );
+		if( newString.indexOf( to_remove_char ) != -1 ) {
+			newString = removeChar( newString , to_remove_char );
+		}
+		return newString;
 	}
-
-	/**
-	 * = a copy of s with to_remove_char removed. Example: removeChar("abeabe",
-	 * 'e') = "abab".
-	 */
-	public static String removeChar(String s, char to_remove_char) {
-
-		// fill me in
-
-	}
+	
 
 	/**
 	 * = a copy of s with characters in reverse order. Example:
