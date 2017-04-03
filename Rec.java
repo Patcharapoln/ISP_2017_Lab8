@@ -7,7 +7,11 @@ public class Rec {
 	 * 4. Precondition: n >= 0.
 	 */
 	public static int numDigits(int n) {
-
+		if (n > -10 && n < 10) {
+			return 1;
+		} else {
+			return 1 + numDigits(n / 10);
+		}
 	}
 
 	/**
@@ -24,9 +28,10 @@ public class Rec {
 			sum = n % 10 + sumDigits(n / 10);
 			return sum;
 
-		}	}
+		}
+	}
 
-
+	
 	/** = a copy of s with to_remove_char removed.
 		Example: removeChar("abeabe", 'e') = "abab". */
 	public static String removeChar(String s , char to_remove_char) {
@@ -40,8 +45,10 @@ public class Rec {
 	}
 
 
-	/** = a copy of s with characters in reverse order.
-		Example: reverse("abcdefg") = "gfedcba". */
+	/**
+	 * = a copy of s with characters in reverse order. Example:
+	 * reverse("abcdefg") = "gfedcba".
+	 */
 	public static String reverse(String s) {
 
 		if ((s == null) || (s.length() <= 1)) {
