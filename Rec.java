@@ -7,11 +7,7 @@ public class Rec {
 	 * 4. Precondition: n >= 0.
 	 */
 	public static int numDigits(int n) {
-		if (n > -10 && n < 10) {
-			return 1;
-		} else {
-			return 1 + numDigits(n / 10);
-		}
+		
 	}
 
 	/**
